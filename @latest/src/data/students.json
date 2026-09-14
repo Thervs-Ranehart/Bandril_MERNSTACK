@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "studentNumber": "202404874",
+        "name": "Thervin Ranehart Bandril",
+        "year": "3",
+        "section" :"3-1",
+        "course" : "BSIT",
+        "email": "thervin.bandril@example.com"
+    },
+    {
+        "id": 2,
+        "studentNumber": "202404123",
+        "name": "Tyler Durden",
+        "year": "2",
+        "section" :"2-5",
+        "course" : "BSCS",
+        "email": "TylerDurds@example.com"
+    },
+    {
+        "id": 3,
+        "studentNumber": "202404456",
+        "name": "Robert Greene",
+        "year": "1",
+        "section" :"1-1",
+        "course" : "BSIE",
+        "email": "robert_green@example.com"
+    }
+]

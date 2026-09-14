@@ -1,0 +1,84 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f4f6f8;
+  color: #222;
+}
+
+.navbar {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h2 {
+  margin: 0;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.page-container {
+  padding: 30px;
+}
+
+.student-container {
+  max-width: 700px;
+}
+
+.student-container input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.student-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+.student-card h3 {
+  margin-top: 0;
+}
+
+.student-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #1e3a8a;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.details-card {
+  background-color: white;
+  padding: 25px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.back-link {
+  font-weight: 800;
+  color: #1e3a8a;
+  text-decoration: none;
+}
+
+
+.links {
+    margin-right: 15px;
+}
+
