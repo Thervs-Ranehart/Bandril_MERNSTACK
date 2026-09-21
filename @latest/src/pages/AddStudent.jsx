@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 function AddStudent() {
-    const [counter, setCounter] = useState(0);
+
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [information, setInformation] = useState([]);
@@ -20,26 +20,27 @@ function AddStudent() {
     return (
     
         <div>
-            <h1>My App</h1>
-            <p>Counter: {counter}</p>
-            <button className= "bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 rounded" onClick = {() => setCounter(counter + 1)}>+</button>
+            <h1>Add Student</h1>
+
             <br></br>
         
-        <input className="border border-gray-300"
+        <form action="">
+                    <input className="addName"
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Enter name" />
 
-        <input className="border border-gray-300"
+        <input className="addEmail"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter email" />
 
-        <button className="bg-green-500 hover:bg-green-700 text-white font-bold p-2 rounded" onClick={handleSubmit}>
+        <button type="submit" className="submitBtn" onClick={handleSubmit}>
             Submit
         </button>
+        </form>
         {
         information.map((info, index) => (
             <div className="border border-gray-300 p-2 m-2 flex w-64 flex-col flex-wrap" key={index}>

@@ -24,7 +24,7 @@ function StudentDetails() {
                 <p>Section: {student.section}</p>
                 <p>Year: {student.year}</p>
                 <p>Email: {student.email}</p>
-              
+                
                 <Link to="/students" className="back-link">Back to Students</Link>
              
             </div>

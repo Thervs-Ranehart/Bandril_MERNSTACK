@@ -10,6 +10,9 @@ import Home from './pages/Home';
 import Students from './pages/Students';
 import StudentDetails from './pages/StudentDetails';
 import AddStudent from './pages/AddStudent';
+import Teachers from './pages/Teachers';
+import TeacherDetails from './pages/TeacherDetails';
+import AddTeacher from './pages/AddTeacher';
 
 function App() {
   return (
@@ -20,6 +23,9 @@ function App() {
         <Route path="/students" element={<Students />} />
         <Route path="/students/:id" element={<StudentDetails />} />
         <Route path="/addstudent" element={<AddStudent />} />
+        <Route path="/teachers" element={<Teachers />} />
+        <Route path="/teachers/:id" element={<TeacherDetails />} />
+        <Route path="/addteacher" element={<AddTeacher />} />
       </Routes>
     </BrowserRouter>
   );

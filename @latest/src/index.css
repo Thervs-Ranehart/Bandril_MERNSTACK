@@ -18,7 +18,7 @@ body {
   margin: 0;
 }
 
-.nav-links a {
+.links a {
   color: white;
   text-decoration: none;
   margin-left: 20px;
@@ -28,11 +28,11 @@ body {
   padding: 30px;
 }
 
-.student-container {
+.student-container, .teacher-container {
   max-width: 700px;
 }
 
-.student-container input {
+.student-container input, .teacher-container input {
   width: 100%;
   padding: 12px;
   margin-top: 10px;
@@ -42,7 +42,7 @@ body {
   border-radius: 5px;
 }
 
-.student-card {
+.student-card, .teacher-card {
   background-color: white;
   border: 1px solid #ddd;
   padding: 20px;
@@ -50,11 +50,11 @@ body {
   border-radius: 8px;
 }
 
-.student-card h3 {
+.student-card h3, .teacher-card h3 {
   margin-top: 0;
 }
 
-.student-card a {
+.student-card a, .teacher-card a {
   display: inline-block;
   margin-top: 10px;
   color: #1e3a8a;
@@ -82,3 +82,15 @@ body {
     margin-right: 15px;
 }
 
+.addName, .addEmail, .addSpecialization, .addTeacherNum {
+  border: 1px solid #1e3a8a;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.submitBtn {
+  background-color: #1e3a8a;
+  color: white;
+  width: 8%;
+  border-radius: 5px;
+}
