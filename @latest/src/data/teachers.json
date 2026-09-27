@@ -1,18 +1,18 @@
 [
     {
-        "id" : "1",
+        "id" : 1,
         "name" : "Lebron James",
         "specialization" : "Expert in dribbling balls.",
         "teacherNum" : "202-404-123"
     },
     {
-        "id" : "2",
+        "id" : 2,
         "name" : "Cameron Mcevoy",
         "specialization" : "Fastest 50m Swimmer",
         "teacherNum" : "202-404-456"
     },
     {
-        "id" : "3",
+        "id" : 3,
         "name" : "Josh Mojica",
         "specialization" : "Marketing and Finance",
         "teacherNum" : "202-404-789"

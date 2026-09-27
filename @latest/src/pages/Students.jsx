@@ -1,10 +1,10 @@
 import Student from "../components/Student";
 
-function Students() {
+function Students({students}) {
     return (
         <div className="page-container">
             <h1>Students</h1>
-            <Student />
+            <Student students={students}/>
         </div>
     );
 }

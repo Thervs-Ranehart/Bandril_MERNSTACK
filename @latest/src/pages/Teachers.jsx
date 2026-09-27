@@ -1,10 +1,10 @@
 import Teacher from "../components/Teacher";
 
-export default function Teachers() {
+export default function Teachers({teachers}) {
     return (
         <div className="page-container">
-          
-            <Teacher />
+            <h1>Teachers</h1>
+            <Teacher teachers={teachers}/>
         </div>
     );
 }

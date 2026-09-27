@@ -1,54 +1,88 @@
-import { useState } from 'react';
-import { Link } from "react-router-dom";
+import { useState } from "react";
 
-export default function AddTeacher() {
-    const [name, setName] = useState("");
-    const [specialization, setSpecialization] = useState("");
-    const [teacherNum, setTeacherNum] = useState("");
-    const [information, setInformation] = useState([]);
+import {
+    BrowserRouter,
+    Routes,
+    Route
+} from "react-router-dom";
 
-    const handleTeacherSubmit = (e) => {
-        e.preventDefaults();
-        const newInformation = {
-            name, 
-            specialization,
-            teacherNum,
-        }
-        setInformation([...information, newInformation]);
-        setName("");
-        setSpecialization("");
-        setTeacherNum("");
-        
-    }
+import Navbar from "./components/Navbar";
+
+import Home from "./pages/Home";
+import Students from "./pages/Students";
+import StudentDetails from "./pages/StudentDetails";
+import AddStudent from "./pages/AddStudent";
+
+import Teachers from "./pages/Teachers";
+import TeacherDetails from "./pages/TeacherDetails";
+import AddTeacher from "./pages/AddTeacher";
+
+import teachersData from "./data/teachers.json";
+
+
+function App() {
+
+    const [teachers, setTeachers] = useState(teachersData);
+
     return (
-        <div>
-            <h1>Add Teacher</h1>
-            <br /><br />
-            <form onSubmit={handleTeacherSubmit}>
-                        <input className="addName"
-                            type="text" 
-                            onChange={(e) => setName(e.target.value)}
-                            placeholder='Enter name'/>
-                        <input className="addSpecialization"
-                            type="text" 
-                            onChange={(e) => setSpecialization(e.target.value)}
-                            placeholder='Enter specialization'/>
-                        <input className='addTeacherNum'
-                            type="text" 
-                            onChange={(e) => setTeacherNum(e.target.value)}
-                            placeholder='Enter teacher number'/>
+        <BrowserRouter>
 
-                        <button type="submit" className="submitBtn" onClick={handleTeacherSubmit}>Submit</button>
-            </form>
+            <Navbar />
 
+            <Routes>
 
-            {information.map((info, index) => {
-                <div key={index}>
-                    <p>Name: {info.name}</p>
-                    <p>Specialization: {info.specialization}</p>
-                    <p>Teacher Num: {info.teacherNum}</p>
-                </div>
-            })}
-        </div>
+                <Route
+                    path="/"
+                    element={<Home />}
+                />
+
+                <Route
+                    path="/students"
+                    element={<Students />}
+                />
+
+                <Route
+                    path="/students/:id"
+                    element={<StudentDetails />}
+                />
+
+                <Route
+                    path="/addstudent"
+                    element={<AddStudent />}
+                />
+
+                <Route
+                    path="/teachers"
+                    element={
+                        <Teachers
+                            teachers={teachers}
+                        />
+                    }
+                />
+
+                <Route
+                    path="/teachers/:id"
+                    element={
+                        <TeacherDetails
+                            teachers={teachers}
+                        />
+                    }
+                />
+
+                <Route
+                    path="/addteacher"
+                    element={
+                        <AddTeacher
+                            teachers={teachers}
+                            setTeachers={setTeachers}
+                        />
+                    }
+                />
+
+            </Routes>
+
+        </BrowserRouter>
     );
 }
+
+export default App;

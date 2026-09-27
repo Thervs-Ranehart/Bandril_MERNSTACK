@@ -91,6 +91,7 @@ body {
 .submitBtn {
   background-color: #1e3a8a;
   color: white;
-  width: 8%;
+  width: 10%;
+  height: auto;
   border-radius: 5px;
 }
