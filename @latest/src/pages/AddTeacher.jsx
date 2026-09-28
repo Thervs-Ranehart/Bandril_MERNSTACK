@@ -1,88 +1,69 @@
 import { useState } from "react";
 
-import {
-    BrowserRouter,
-    Routes,
-    Route
-} from "react-router-dom";
+export default function AddTeacher({ teachers, setTeachers }) {
 
-import Navbar from "./components/Navbar";
+    const [name, setName] = useState("");
+    const [specialization, setSpecialization] = useState("");
+    const [teacherNum, setTeacherNum] = useState("");
 
-import Home from "./pages/Home";
-import Students from "./pages/Students";
-import StudentDetails from "./pages/StudentDetails";
-import AddStudent from "./pages/AddStudent";
+    const handleTeacherSubmit = (e) => {
+        e.preventDefault();
 
-import Teachers from "./pages/Teachers";
-import TeacherDetails from "./pages/TeacherDetails";
-import AddTeacher from "./pages/AddTeacher";
+        const newTeacher = {
+            id: String(teachers.length + 1),
+            name: name,
+            specialization: specialization,
+            teacherNum: teacherNum
+        };
 
-import teachersData from "./data/teachers.json";
+        setTeachers([...teachers, newTeacher]);
 
-
-function App() {
-
-    const [teachers, setTeachers] = useState(teachersData);
+        setName("");
+        setSpecialization("");
+        setTeacherNum("");
+    };
 
     return (
-        <BrowserRouter>
+        <div>
+            <h1>Add Teacher</h1>
 
-            <Navbar />
+            <br />
+            <br />
 
-            <Routes>
+            <form onSubmit={handleTeacherSubmit}>
 
-                <Route
-                    path="/"
-                    element={<Home />}
+                <input
+                    className="addName"
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Enter name"
                 />
 
-                <Route
-                    path="/students"
-                    element={<Students />}
+                <input
+                    className="addSpecialization"
+                    type="text"
+                    value={specialization}
+                    onChange={(e) => setSpecialization(e.target.value)}
+                    placeholder="Enter specialization"
                 />
 
-                <Route
-                    path="/students/:id"
-                    element={<StudentDetails />}
+                <input
+                    className="addTeacherNum"
+                    type="text"
+                    value={teacherNum}
+                    onChange={(e) => setTeacherNum(e.target.value)}
+                    placeholder="Enter teacher number"
                 />
 
-                <Route
-                    path="/addstudent"
-                    element={<AddStudent />}
-                />
+                <button
+                    type="submit"
+                    className="submitBtn"
+                >
+                    Submit
+                </button>
 
-                <Route
-                    path="/teachers"
-                    element={
-                        <Teachers
-                            teachers={teachers}
-                        />
-                    }
-                />
-
-                <Route
-                    path="/teachers/:id"
-                    element={
-                        <TeacherDetails
-                            teachers={teachers}
-                        />
-                    }
-                />
-
-                <Route
-                    path="/addteacher"
-                    element={
-                        <AddTeacher
-                            teachers={teachers}
-                            setTeachers={setTeachers}
-                        />
-                    }
-                />
-
-            </Routes>
-
-        </BrowserRouter>
+            </form>
+        </div>
     );
 }
-
-export default App;

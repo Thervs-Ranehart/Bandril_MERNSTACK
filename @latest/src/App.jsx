@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import {
     BrowserRouter,
@@ -23,6 +23,23 @@ import teachersData from "./data/teachers.json";
 function App() {
 
     const [teachers, setTeachers] = useState(teachersData);
+    const [students, setStudents] = useState([]);
+
+    useEffect(()=> {
+        fetch("http://localhost:8080/api/message")
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+            });
+    }, []);
+
+    useEffect(() => {
+        fetch("http://localhost:5000/api/students")
+           .then(response => response.json())
+           .then(data => {
+               setStudents(data);
+           });
+    }, []);
 
     return (
         <BrowserRouter>
